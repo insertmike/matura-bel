@@ -15,7 +15,15 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.lightBlue,
+          textTheme: TextTheme(
+            body1: TextStyle(
+              fontSize: 16,
+              
+            )
+          )
+          
+          
         ),
         home: AuthorsListScreen(),
         routes: {

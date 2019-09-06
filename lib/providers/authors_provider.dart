@@ -25,7 +25,7 @@ class Authors {
       dateOfDeath: DateTime.utc(1921, 9, 22),
       periods: ["Възраждане", " Следосвобожденска България"],
       quantifications: ["Патриарх на българската литература", "Народен поет", "Българският Омир", "Летописец на своето време",],
-      imageUrl: "",
+      imageUrl: "assets/images/ivan_vazov.jpg",
     ),
     
   ];

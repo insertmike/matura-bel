@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:matura_lit/models/composition.dart';
 import 'package:provider/provider.dart';
-
+import 'package:intl/intl.dart';
 import '../providers/authors_provider.dart';
 import '../models/author.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+
 import '../widgets/author_card.dart';
 
 class AuthorScreen extends StatelessWidget {
@@ -27,9 +29,7 @@ class AuthorScreen extends StatelessWidget {
                 _author.name,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                  fontSize: 25,
-                  letterSpacing: 1.05,
-                ),
+                    fontSize: 25, letterSpacing: 1.05, color: Colors.white),
               ),
               background: Image.asset(
                 _author.imageUrl,
@@ -48,31 +48,30 @@ class AuthorScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          "Роден: 6 Януари 1848",
-                          style: TextStyle(fontSize: 16),
+                        new RowLine(
+                          text: "Роден:",
+                          date: _author.dateOfBirth,
+                        ),
+                        Divider(height: 20),
+                        new RowLine(
+                          text: "Починал:",
+                          date: _author.dateOfDeath,
                         ),
                         Divider(
                           height: 20,
                         ),
-                        Text(
-                          "Починал: 6 Януари 1848",
-                          style: TextStyle(fontSize: 16),
+                        RowLine(
+                          text: "Творчески Периоди:",
+                          items: _author.getPeriods,
                         ),
                         Divider(
                           height: 20,
                         ),
-                        Text(
-                          'Творчески Периоди: ${_author.getPeriods}',
-                          style: TextStyle(fontSize: 16),
+                        RowLine(
+                          text: "Определян като::",
+                          items: _author.getQuantifications,
                         ),
-                        Divider(
-                          height: 20,
-                        ),
-                        Text(
-                          'Определян като: ${_author.getQuantifications}',
-                          style: TextStyle(fontSize: 16),
-                        ),
+                        
                         Divider(
                           height: 20,
                         ),
@@ -82,13 +81,17 @@ class AuthorScreen extends StatelessWidget {
                           elevation: 10,
                           child: Column(
                             children: <Widget>[
-                              for (var item in _author.compositions)  
+                              for (var item in _author.compositions)
                                 Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [Text(item.name + ",", style: TextStyle(fontSize: 15),), SizedBox(height: 20,)]),
-                                
-                                
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(item.name + ","),
+                                      SizedBox(
+                                        height: 20,
+                                      )
+                                    ]),
                             ],
                           ),
                         )
@@ -104,6 +107,46 @@ class AuthorScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RowLine extends StatelessWidget {
+  String items;
+  DateTime date;
+  final String text;
+
+  RowLine({
+    @required this.text,
+    this.items,
+    this.date,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    print(items);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      
+       
+      children: <Widget>[
+        Text(text),
+        SizedBox(
+          width: 7,
+        ),
+        date != null
+            ? Text(
+                DateFormat.y().format(date),
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )
+            : Flexible(
+                child: Text(
+                  items,
+                  maxLines: 2,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+      ],
     );
   }
 }

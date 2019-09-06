@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './providers/authors_provider.dart';
 import './screens/authors_screen.dart';
+import './screens/author_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
+    return Provider.value(
       value: Authors(),
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -17,6 +18,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
         ),
         home: AuthorsListScreen(),
+        routes: {
+          AuthorsListScreen.routeName : (ctx) => AuthorsListScreen(),
+          AuthorScreen.routeName: (ctx) => AuthorScreen(),
+        },
       ),
     );
   }

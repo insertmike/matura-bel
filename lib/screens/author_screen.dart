@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matura_lit/models/composition.dart';
-import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import '../providers/authors_provider.dart';
 import '../models/author.dart';
-import 'package:auto_size_text/auto_size_text.dart';
-
-import '../widgets/author_card.dart';
 
 class AuthorScreen extends StatelessWidget {
   static const routeName = 'author-screen';
@@ -16,27 +10,29 @@ class AuthorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Author _author = ModalRoute.of(context).settings.arguments as Author;
-    //List<Author> _authors = Provider.of<Authors>(context).authors;
 
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
+          // App Bar
           SliverAppBar(
             expandedHeight: 300,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 _author.name,
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontSize: 25, letterSpacing: 1.05, color: Colors.white),
+                style: TextStyle(letterSpacing: 1.05),
               ),
-              background: Image.asset(
-                _author.imageUrl,
-                fit: BoxFit.fitHeight,
+              background: Hero(
+                tag: _author.imageUrl,
+                child: Image.asset(
+                  _author.imageUrl,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
           ),
+
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -46,62 +42,27 @@ class AuthorScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        new RowLine(
-                          text: "Роден:",
-                          date: _author.dateOfBirth,
-                        ),
+                        // Birth
+                        RowLine(text: "Роден:", date: _author.dateOfBirth),
                         Divider(height: 20),
-                        new RowLine(
-                          text: "Починал:",
-                          date: _author.dateOfDeath,
-                        ),
-                        Divider(
-                          height: 20,
-                        ),
+                        // Death
+                        RowLine(text: "Починал:", date: _author.dateOfDeath),
+                        Divider(height: 20),
+                        // Author Art Periods
                         RowLine(
-                          text: "Творчески Периоди:",
-                          items: _author.getPeriods,
-                        ),
-                        Divider(
-                          height: 20,
-                        ),
+                            text: "Творчески Периоди:", items: _author.periods),
+                        Divider(height: 20),
+                        // Author Quantifications
                         RowLine(
-                          text: "Определян като::",
-                          items: _author.getQuantifications,
-                        ),
-                        
-                        Divider(
-                          height: 20,
-                        ),
-                        Text("Творби:"),
-                        Card(
-                          margin: EdgeInsets.only(top: 10),
-                          elevation: 10,
-                          child: Column(
-                            children: <Widget>[
-                              for (var item in _author.compositions)
-                                Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(item.name + ","),
-                                      SizedBox(
-                                        height: 20,
-                                      )
-                                    ]),
-                            ],
-                          ),
-                        )
+                            text: "Определян като:",
+                            items: _author.quantifications),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 900,
-                ),
+                // Debugging purposes
+                SizedBox(height: 900),
               ],
             ),
           ),
@@ -111,11 +72,11 @@ class AuthorScreen extends StatelessWidget {
   }
 }
 
+// Lives here because it is used only here
 class RowLine extends StatelessWidget {
-  String items;
-  DateTime date;
+  final DateTime date;
   final String text;
-
+  final List<String> items;
   RowLine({
     @required this.text,
     this.items,
@@ -124,26 +85,35 @@ class RowLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(items);
+    print("rebuilding authors screen");
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      
-       
       children: <Widget>[
-        Text(text),
-        SizedBox(
-          width: 7,
+        Container(
+          constraints: BoxConstraints(minWidth: 100, maxWidth: 130),
+          child: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(text),
+          ),
         ),
         date != null
             ? Text(
                 DateFormat.y().format(date),
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
-            : Flexible(
-                child: Text(
-                  items,
-                  maxLines: 2,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+            : Container(
+                constraints: BoxConstraints(
+                    minHeight: 50,
+                    maxHeight: 400,
+                    minWidth: 100,
+                    maxWidth: 200),
+                child: ListView.builder(
+                  padding: EdgeInsets.all(10),
+                  shrinkWrap: true,
+                  itemCount: items.length,
+                  itemBuilder: (ctx, index) => Center(
+                    child: FittedBox(child: Text(items[index])),
+                  ),
                 ),
               ),
       ],

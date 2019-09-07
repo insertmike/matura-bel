@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 import '../models/author.dart';
 import '../info_assets/vazov_compositions.dart';
 import '../info_assets/botev_compositions.dart';

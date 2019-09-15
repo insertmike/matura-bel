@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/author.dart';
-import '../widgets/author_bioCard.dart';
+import '../widgets/author_bio_card.dart';
+import '../widgets/author_compositions_cards.dart';
 
 class AuthorScreen extends StatelessWidget {
   static const routeName = 'author-screen';
@@ -37,6 +38,8 @@ class AuthorScreen extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 AuthorBioCard(author: _author),
+
+                AuthorCompositionsCardsBuilder(_author),
                 // Debugging purposes
                 SizedBox(height: 900),
               ],
@@ -47,4 +50,3 @@ class AuthorScreen extends StatelessWidget {
     );
   }
 }
-

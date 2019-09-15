@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:matura_lit/models/composition.dart';
 import 'package:provider/provider.dart';
 import './providers/authors_provider.dart';
 import './screens/authors_screen.dart';
 import './screens/author_screen.dart';
+import './screens/composition_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
         routes: {
           AuthorsListScreen.routeName: (ctx) => AuthorsListScreen(),
           AuthorScreen.routeName: (ctx) => AuthorScreen(),
+          CompositionScreen.routeName: (ctx) => CompositionScreen()
         },
       ),
     );

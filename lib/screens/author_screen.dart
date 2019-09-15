@@ -15,7 +15,6 @@ class AuthorScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          // App Bar
           SliverAppBar(
             expandedHeight: 300,
             pinned: true,
@@ -33,7 +32,6 @@ class AuthorScreen extends StatelessWidget {
               ),
             ),
           ),
-
           SliverList(
             delegate: SliverChildListDelegate(
               [

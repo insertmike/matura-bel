@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:matura_lit/models/composition.dart';
 import 'package:provider/provider.dart';
 import './providers/authors_provider.dart';
 import './screens/authors_screen.dart';

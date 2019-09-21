@@ -4,6 +4,7 @@ import '../info_assets/botev_compositions.dart';
 import '../info_assets/aleko_compositions.dart';
 import '../info_assets/slaveikov_compositions.dart';
 import '../info_assets/qvorov_compositions.dart';
+import '../info_assets/pelin_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -69,7 +70,21 @@ class Authors {
       periods: ['Реализъм', 'Модернизъм'],
       quantifications: ['Поет', 'Мемоарист', 'Драматург', 'Биограф'],
       imageUrl: "assets/images/peio_qvorov.jpg",
-    )
+    ),
+    Author(
+        id: 6,
+        name: 'Елин Пелин',
+        dateOfBirth: DateTime.utc(1877, 6, 8),
+        dateOfDeath: DateTime.utc(1949, 12, 3),
+        town: 'Байлово, Софийско',
+        imageUrl: "assets/images/elin_pelin.jpg",
+        periods: ['Реализъм'],
+        compositions: pelinCompositionsList(),
+        quantifications: [
+          'Майстор на късия разкъз',
+          'Художник на българското село',
+          'Певец на българското село'
+        ]),
   ];
 
   List<Author> get authors {

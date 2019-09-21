@@ -1,6 +1,7 @@
 import '../models/author.dart';
 import '../info_assets/vazov_compositions.dart';
 import '../info_assets/botev_compositions.dart';
+import '../info_assets/aleko_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -15,8 +16,6 @@ class Authors {
       periods: ["Романтизъм", "Реализъм"],
       quantifications: ["Сатирик", "Революционер"],
       imageUrl: "assets/images/hristo_botev.jpg",
-      
-      
     ),
     Author(
       id: 2,
@@ -26,18 +25,32 @@ class Authors {
       compositions: vazovCompositionsList(),
       dateOfDeath: DateTime.utc(1921, 9, 22),
       periods: ["Възраждане", " Следосвобожденска България"],
-      quantifications: ["Патриарх на българската литература", "Народен поет", "Българският Омир", "Летописец на своето време",],
+      quantifications: [
+        "Патриарх на българската литература",
+        "Народен поет",
+        "Българският Омир",
+        "Летописец на своето време",
+      ],
       imageUrl: "assets/images/ivan_vazov.jpg",
     ),
-    
-
-    
+    Author(
+      id: 3,
+      name: 'Алеко Константинов',
+      town: 'Свищов',
+      dateOfBirth: DateTime.utc(1863, 1, 1),
+      dateOfDeath: DateTime.utc(1897, 5, 11),
+      periods: ["Социален Реализъм"],
+      quantifications: [
+        "Щастливеца",
+        'Основател на организираното туристическо движение в България'
+      ],
+      imageUrl: "assets/images/aleko_konstantinov.jpg",
+      compositions: alekoCompositionsList(),
+    ),
   ];
 
   List<Author> get authors {
     // Returning a copy so the user does not modify original data
     return [..._authors];
   }
-
-  
 }

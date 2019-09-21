@@ -25,12 +25,15 @@ class AuthorCard extends StatelessWidget {
           Container(
             alignment: Alignment.bottomCenter,
             padding: EdgeInsets.all(10),
-            child: Text(
-              author.name,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 1.05,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                author.name,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 1.05,
+                ),
               ),
             ),
           ),

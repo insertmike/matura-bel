@@ -30,6 +30,8 @@ class Authors {
       imageUrl: "assets/images/ivan_vazov.jpg",
     ),
     
+
+    
   ];
 
   List<Author> get authors {

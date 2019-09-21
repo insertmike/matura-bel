@@ -2,6 +2,7 @@ import '../models/author.dart';
 import '../info_assets/vazov_compositions.dart';
 import '../info_assets/botev_compositions.dart';
 import '../info_assets/aleko_compositions.dart';
+import '../info_assets/slaveikov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -47,6 +48,16 @@ class Authors {
       imageUrl: "assets/images/aleko_konstantinov.jpg",
       compositions: alekoCompositionsList(),
     ),
+    Author(
+        id: 4,
+        name: 'Пенчо Славейков',
+        town: 'Трявна',
+        dateOfBirth: DateTime.utc(1866, 4, 27),
+        dateOfDeath: DateTime.utc(1912, 5, 28),
+        imageUrl: "assets/images/pencho_slaveikov.jpg",
+        periods: ['Модернизъм', 'Индивидуализъм'],
+        compositions: slaveikovCompositions(),
+        quantifications: ['Жрец войн'])
   ];
 
   List<Author> get authors {

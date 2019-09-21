@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/author.dart';
 
-
 class AuthorBioCard extends StatelessWidget {
   const AuthorBioCard({
     Key key,
@@ -38,6 +37,7 @@ class AuthorBioCard extends StatelessWidget {
     );
   }
 }
+
 // Lives here because it is used only here
 class RowLine extends StatelessWidget {
   final DateTime date;
@@ -68,17 +68,22 @@ class RowLine extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),
               )
             : Container(
+                margin: EdgeInsets.only(left: 10),
                 constraints: BoxConstraints(
-                    minHeight: 50,
-                    maxHeight: 400,
-                    minWidth: 100,
-                    maxWidth: 200),
+                    minHeight: 50, maxHeight: 60, minWidth: 100, maxWidth: 200),
                 child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.all(10),
                   shrinkWrap: true,
                   itemCount: items.length,
                   itemBuilder: (ctx, index) => Center(
-                    child: FittedBox(child: Text(items[index])),
+                    child: FittedBox(
+                      child: Text(
+                          index == (items.length - 1)
+                              ? items[index]
+                              : items[index] + ", ",
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                    ),
                   ),
                 ),
               ),

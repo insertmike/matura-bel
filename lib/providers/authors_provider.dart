@@ -14,6 +14,7 @@ class Authors {
       periods: ["Романтизъм", "Реализъм"],
       quantifications: ["Сатирик", "Революционер"],
       imageUrl: "assets/images/hristo_botev.jpg",
+      
     ),
     Author(
       id: 2,

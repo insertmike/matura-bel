@@ -3,6 +3,7 @@ import '../info_assets/vazov_compositions.dart';
 import '../info_assets/botev_compositions.dart';
 import '../info_assets/aleko_compositions.dart';
 import '../info_assets/slaveikov_compositions.dart';
+import '../info_assets/qvorov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -57,7 +58,18 @@ class Authors {
         imageUrl: "assets/images/pencho_slaveikov.jpg",
         periods: ['Модернизъм', 'Индивидуализъм'],
         compositions: slaveikovCompositions(),
-        quantifications: ['Жрец войн'])
+        quantifications: ['Жрец войн']),
+    Author(
+      id: 5,
+      name: 'Пейо Яворов',
+      town: 'Чирпан',
+      compositions: qvorovCompositions(),
+      dateOfBirth: DateTime.utc(1878, 1, 1),
+      dateOfDeath: DateTime.utc(1914, 10, 17),
+      periods: ['Реализъм', 'Модернизъм'],
+      quantifications: ['Поет', 'Мемоарист', 'Драматург', 'Биограф'],
+      imageUrl: "assets/images/peio_qvorov.jpg",
+    )
   ];
 
   List<Author> get authors {

@@ -1,37 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'package:matura_lit/models/composition.dart';
+
 class CompositionScreen extends StatelessWidget {
   static const routeName = 'composition-screen';
 
-  List<String> getRows(String str) {
-    List<String> rows = new List();
-    String current = '';
-    for (var item in str.split('')) {
-      if (item == '\n') {
-        rows.add(current);
-        current = '';
-      } else {
-        current += item;
-      }
-    }
-
-    return rows;
-  }
-
   @override
   Widget build(BuildContext context) {
-    String _composition = ModalRoute.of(context).settings.arguments as String;
-    List<String> rows = getRows(_composition);
+    final Composition _composition =
+        ModalRoute.of(context).settings.arguments as Composition;
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Матура БЕЛ'),
+          title: Text(_composition.name),
         ),
         body: Center(
-          child: ListView.builder(
-            itemCount: rows.length,
-            itemBuilder: (ctx, index) => Text(rows[index]),
-          ),
+          child: Text(_composition.name),
         ));
   }
 }

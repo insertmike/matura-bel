@@ -5,12 +5,14 @@ import './composition.dart';
 class Author {
   final int id;
   final String name;
+  final String town;
   // DateTime.utc
   final DateTime dateOfBirth;
   final DateTime dateOfDeath;
   final List<String> quantifications;
   // TODO -> Make Period Model
   final List<String> periods;
+
   final List<Composition> compositions;
   final String imageUrl;
 
@@ -23,24 +25,24 @@ class Author {
     @required this.periods,
     @required this.compositions,
     @required this.imageUrl,
+    this.town,
   });
 
-  String get getPeriods{
+  String get getPeriods {
     var periodsString = "";
     for (var item in periods) {
-      periodsString+= "$item, ";
+      periodsString += "$item, ";
     }
 
-    return  periodsString.substring(0,periodsString.length - 2);
-    
+    return periodsString.substring(0, periodsString.length - 2);
   }
 
-  String get getQuantifications{
+  String get getQuantifications {
     var quantsString = "";
     for (var item in quantifications) {
-      quantsString+= "$item, ";
+      quantsString += "$item, ";
     }
 
-    return  quantsString.substring(0,quantsString.length - 2);
+    return quantsString.substring(0, quantsString.length - 2);
   }
 }

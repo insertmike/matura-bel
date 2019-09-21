@@ -18,11 +18,9 @@ class AuthorCompositionsCardsBuilder extends StatelessWidget {
         return Card(
           elevation: 4,
           child: InkWell(
-            onTap: _author.compositions[index].text == null
-                ? () => {}
-                : () => Navigator.of(context).pushNamed(
-                    CompositionScreen.routeName,
-                    arguments: _author.compositions[index].text),
+            onTap: () => Navigator.of(context).pushNamed(
+                CompositionScreen.routeName,
+                arguments: _author.compositions[index]),
             child: Stack(children: [
               CompositionImage(),
               CompositionTitle(_author.compositions[index].name),

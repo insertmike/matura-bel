@@ -8,6 +8,7 @@ class Authors {
     Author(
       id: 1,
       name: "Христо Ботев",
+      town: 'Калофер',
       dateOfBirth: DateTime.utc(1848, 1, 6),
       compositions: botevCompositionsList(),
       dateOfDeath: DateTime.utc(1876, 6, 1),
@@ -15,10 +16,12 @@ class Authors {
       quantifications: ["Сатирик", "Революционер"],
       imageUrl: "assets/images/hristo_botev.jpg",
       
+      
     ),
     Author(
       id: 2,
       name: "Иван Вазов",
+      town: 'Сопот',
       dateOfBirth: DateTime.utc(1850, 7, 27),
       compositions: vazovCompositionsList(),
       dateOfDeath: DateTime.utc(1921, 9, 22),

@@ -14,7 +14,7 @@ class AuthorsListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Матура БЕЛ'),
+        title: Text('Българска Литература'),
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(10.0),

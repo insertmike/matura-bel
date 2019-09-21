@@ -26,6 +26,9 @@ class AuthorBioCard extends StatelessWidget {
             // Death
             RowLine(text: "Починал:", date: _author.dateOfDeath),
             Divider(height: 20),
+            // Town
+            RowLine(text: "Град:", items: [_author.town]),
+            Divider(height: 20),
             // Author Art Periods
             RowLine(text: "Творчески Периоди:", items: _author.periods),
             Divider(height: 20),
@@ -55,25 +58,26 @@ class RowLine extends StatelessWidget {
     return Row(
       children: <Widget>[
         Container(
-          constraints: BoxConstraints(minWidth: 100, maxWidth: 130),
+          width: 130,
+          margin: EdgeInsets.only(right: 10.0),
           child: FittedBox(
-            alignment: Alignment.centerLeft,
-            fit: BoxFit.scaleDown,
-            child: Text(text),
-          ),
+              alignment: Alignment.centerLeft,
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+              )),
         ),
-        date != null
-            ? Text(
-                DateFormat.y().format(date),
-                style: TextStyle(fontWeight: FontWeight.bold),
-              )
-            : Container(
-                margin: EdgeInsets.only(left: 10),
-                constraints: BoxConstraints(
-                    minHeight: 50, maxHeight: 60, minWidth: 100, maxWidth: 200),
-                child: ListView.builder(
+        Container(
+          constraints: BoxConstraints(
+              minHeight: 50, maxHeight: 50, minWidth: 100, maxWidth: 200),
+          alignment: Alignment.centerLeft,
+          child: date != null
+              ? Text(
+                  DateFormat.y().format(date),
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                )
+              : ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.all(10),
                   shrinkWrap: true,
                   itemCount: items.length,
                   itemBuilder: (ctx, index) => Center(
@@ -86,7 +90,7 @@ class RowLine extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
+        )
       ],
     );
   }

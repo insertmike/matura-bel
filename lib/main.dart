@@ -19,10 +19,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-            primarySwatch: Colors.green,
+          fontFamily: 'Raleway',
+            primarySwatch: Colors.pink,
             textTheme: TextTheme(
               body1: TextStyle(
                 fontSize: 16,
+              //  fontFamily: 'Raleway',
+              
               ),
             )),
         home: AuthorsListScreen(),

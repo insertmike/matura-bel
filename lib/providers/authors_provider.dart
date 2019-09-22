@@ -5,6 +5,7 @@ import '../info_assets/aleko_compositions.dart';
 import '../info_assets/slaveikov_compositions.dart';
 import '../info_assets/qvorov_compositions.dart';
 import '../info_assets/pelin_compositions.dart';
+import '../info_assets/debelqnov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -85,6 +86,17 @@ class Authors {
           'Художник на българското село',
           'Певец на българското село'
         ]),
+    Author(
+      id: 7,
+      name: 'Димчо Дебелянов',
+      periods: ['Символизъм'],
+      dateOfBirth: DateTime.utc(1887, 3, 28),
+      dateOfDeath: DateTime.utc(1916, 10, 2),
+      town: 'Копривщица',
+      quantifications: ['Най-елегичния поет', 'Бездомник в нощта'],
+      compositions: debelqnovCompositionsList(),
+      imageUrl: "assets/images/dimcho_debelqnov.jpg",
+    )
   ];
 
   List<Author> get authors {

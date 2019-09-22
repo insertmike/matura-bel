@@ -7,6 +7,7 @@ import '../info_assets/qvorov_compositions.dart';
 import '../info_assets/pelin_compositions.dart';
 import '../info_assets/debelqnov_compositions.dart';
 import '../info_assets/smirnenski_compositions.dart';
+import '../info_assets/milev_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -113,7 +114,18 @@ class Authors {
       town: 'Кукуш',
       imageUrl: "assets/images/hristo_smirnenski.jpg",
       compositions: smirnenskiCompositionsList(),
-    )
+    ),
+    Author(
+      id: 9,
+      name: 'Гео Милев',
+      dateOfBirth: DateTime.utc(1895, 1, 15),
+      dateOfDeath: DateTime.utc(1925, 5, 15),
+      town: 'Раднево',
+      periods: ['Експреонизъм'],
+      quantifications: ['-'],
+      imageUrl: "assets/images/geo_milev.jpg",
+      compositions: milevCompositionsList(),
+    ),
   ];
 
   List<Author> get authors {

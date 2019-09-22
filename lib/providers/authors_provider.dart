@@ -6,6 +6,7 @@ import '../info_assets/slaveikov_compositions.dart';
 import '../info_assets/qvorov_compositions.dart';
 import '../info_assets/pelin_compositions.dart';
 import '../info_assets/debelqnov_compositions.dart';
+import '../info_assets/smirnenski_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -96,6 +97,22 @@ class Authors {
       quantifications: ['Най-елегичния поет', 'Бездомник в нощта'],
       compositions: debelqnovCompositionsList(),
       imageUrl: "assets/images/dimcho_debelqnov.jpg",
+    ),
+    Author(
+      id: 8,
+      name: 'Христо Смирненски',
+      periods: ['Постсимволизъм'],
+      quantifications: [
+        'Псевдоним - Ведбал',
+        'Юноша',
+        'Слънчевото дете на българската поезия',
+        'поет на Града'
+      ],
+      dateOfBirth: DateTime.utc(1898, 9, 17),
+      dateOfDeath: DateTime.utc(1923, 6, 18),
+      town: 'Кукуш',
+      imageUrl: "assets/images/hristo_smirnenski.jpg",
+      compositions: smirnenskiCompositionsList(),
     )
   ];
 

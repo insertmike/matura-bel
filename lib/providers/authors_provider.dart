@@ -8,6 +8,7 @@ import '../info_assets/pelin_compositions.dart';
 import '../info_assets/debelqnov_compositions.dart';
 import '../info_assets/smirnenski_compositions.dart';
 import '../info_assets/milev_compositions.dart';
+import '../info_assets/dalchev_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -125,6 +126,17 @@ class Authors {
       quantifications: ['-'],
       imageUrl: "assets/images/geo_milev.jpg",
       compositions: milevCompositionsList(),
+    ),
+    Author(
+      id: 10,
+      name: 'Атанас Далчев',
+      town: 'Солун',
+      dateOfBirth: DateTime.utc(1904, 6, 12),
+      dateOfDeath: DateTime.utc(1978, 1, 17),
+      periods: ['Диаболизъм'],
+      quantifications: ['Поет', 'Преводач', 'Критик', 'Мислител'],
+      imageUrl: "assets/images/atanas_dalchev.jpg",
+      compositions: dalchevCompositionsList(),
     ),
   ];
 

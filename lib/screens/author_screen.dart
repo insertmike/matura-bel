@@ -38,8 +38,6 @@ class AuthorScreen extends StatelessWidget {
                 AuthorBioCard(author: _author),
 
                 AuthorCompositionsCardsBuilder(_author),
-                // Debugging purposes
-                SizedBox(height: 900),
               ],
             ),
           ),

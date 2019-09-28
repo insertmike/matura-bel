@@ -9,6 +9,7 @@ import '../info_assets/debelqnov_compositions.dart';
 import '../info_assets/smirnenski_compositions.dart';
 import '../info_assets/milev_compositions.dart';
 import '../info_assets/dalchev_compositions.dart';
+import '../info_assets/bagrqna_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -138,6 +139,17 @@ class Authors {
       imageUrl: "assets/images/atanas_dalchev.jpg",
       compositions: dalchevCompositionsList(),
     ),
+    Author(
+      id: 11,
+      name: 'Елисавета Багряна',
+      town: 'София',
+      dateOfBirth: DateTime.utc(1893, 4, 16),
+      dateOfDeath: DateTime.utc(1991, 3, 23),
+      quantifications: ['Багряна'],
+      imageUrl: 'assets/images/elisaveta_bagrqna',
+      periods: ['Авандгардизъм'],
+      compositions: bagrqnaCompositionsList(),
+    )
   ];
 
   List<Author> get authors {

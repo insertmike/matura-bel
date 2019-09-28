@@ -1,4 +1,4 @@
-import 'package:matura_lit/models/author.dart';
+import '../models/author.dart';
 
 import '../models/composition.dart';
 
@@ -97,6 +97,7 @@ List<Composition> dalchevCompositionsList() {
         id: 8,
         name: 'Дяволско',
         genre: 'Стихотворение',
+        mainSubject: 'Отчуждението и невъзможността за комуникация с хората.',
         artisticShapes: [
           'Часовникът',
           '12-те кръга',

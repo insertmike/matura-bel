@@ -10,6 +10,7 @@ import '../info_assets/smirnenski_compositions.dart';
 import '../info_assets/milev_compositions.dart';
 import '../info_assets/dalchev_compositions.dart';
 import '../info_assets/bagrqna_compositions.dart';
+import '../info_assets/yovkov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -151,16 +152,15 @@ class Authors {
       compositions: bagrqnaCompositionsList(),
     ),
     Author(
-      id: 12,
-      name: "Йордан Йовков",
-      town: 'Жеравна',
-      dateOfBirth: DateTime.utc(1880, 11, 9),
-      dateOfDeath: DateTime.utc(1937, 10, 15),
-      imageUrl: 'assets/images/yordan_yovkov',
-      compositions: null ,
-      periods: ['Реализъм'],
-      quantifications: ['Майстор на късия разказ','Обективен разказвач'] 
-    )
+        id: 12,
+        name: "Йордан Йовков",
+        town: 'Жеравна',
+        dateOfBirth: DateTime.utc(1880, 11, 9),
+        dateOfDeath: DateTime.utc(1937, 10, 15),
+        imageUrl: 'assets/images/yordan_yovkov',
+        compositions: yovkovCompositionsList(),
+        periods: ['Реализъм'],
+        quantifications: ['Майстор на късия разказ', 'Обективен разказвач'])
   ];
 
   List<Author> get authors {

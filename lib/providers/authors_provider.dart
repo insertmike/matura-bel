@@ -149,6 +149,17 @@ class Authors {
       imageUrl: 'assets/images/elisaveta_bagrqna',
       periods: ['Авандгардизъм'],
       compositions: bagrqnaCompositionsList(),
+    ),
+    Author(
+      id: 12,
+      name: "Йордан Йовков",
+      town: 'Жеравна',
+      dateOfBirth: DateTime.utc(1880, 11, 9),
+      dateOfDeath: DateTime.utc(1937, 10, 15),
+      imageUrl: 'assets/images/yordan_yovkov',
+      compositions: null ,
+      periods: ['Реализъм'],
+      quantifications: ['Майстор на късия разказ','Обективен разказвач'] 
     )
   ];
 

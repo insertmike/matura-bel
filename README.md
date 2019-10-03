@@ -2,8 +2,9 @@
 
 Educational open source application to help students extend their knowledge in terms of Bulgarian literature as well as their grammatical knowledge. 
 
-*What problem does this app solves?*
-Every year, hundred thousands of students in Bulgaria are giving enormous amount of money in Bulgaria for private lessons in order to prepare for the final evaluation test, which covers 5 years material. I find myself in similar situations while being in High School. Unfortunately not everyone can afford this. I believe that one free of charge mobile application, which is *cross-platform* can solve this problem. 
+What problem does this app solves?
+
+   Every year, hundred thousands of students in Bulgaria are giving enormous amount of money in Bulgaria for private lessons in order to prepare for the final evaluation test, which covers 5 years material. I find myself in similar situations while being in High School. Unfortunately not everyone can afford this. I believe that one free of charge mobile application, which is *cross-platform* can solve this problem. 
 
 *If you are willing to take part of this app journey let me know at:* myonchev@gmail.com
 ## Development plan

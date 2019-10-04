@@ -11,6 +11,7 @@ import '../info_assets/milev_compositions.dart';
 import '../info_assets/dalchev_compositions.dart';
 import '../info_assets/bagrqna_compositions.dart';
 import '../info_assets/yovkov_compositions.dart';
+import '../info_assets/vapcarov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -160,7 +161,17 @@ class Authors {
         imageUrl: 'assets/images/yordan_yovkov',
         compositions: yovkovCompositionsList(),
         periods: ['Реализъм'],
-        quantifications: ['Майстор на късия разказ', 'Обективен разказвач'])
+        quantifications: ['Майстор на късия разказ', 'Обективен разказвач']),
+    Author(
+        id: 13,
+        name: 'Никола Вапцаров',
+        town: 'Банско',
+        periods: ['Реализъм'],
+        imageUrl: 'assets/images/nikola_vapcarov',
+        dateOfBirth: DateTime.utc(1909, 11, 24),
+        dateOfDeath: DateTime.utc(1942, 7, 23),
+        compositions: vapcarovCompositionsList(),
+        quantifications: ['Огняроинтелиген'])
   ];
 
   List<Author> get authors {

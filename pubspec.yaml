@@ -55,6 +55,7 @@ flutter:
     - assets/images/atanas_dalchev.jpg
     - assets/images/elisaveta_bagrqna.jpg
     - assets/images/yordan_yovkov.jpg
+    - assets/images/nikola_vapcarov.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

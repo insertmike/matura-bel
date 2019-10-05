@@ -12,6 +12,7 @@ import '../info_assets/dalchev_compositions.dart';
 import '../info_assets/bagrqna_compositions.dart';
 import '../info_assets/yovkov_compositions.dart';
 import '../info_assets/vapcarov_compositions.dart';
+import '../info_assets/dimov_compositions.dart';
 
 // Change Modifier we don't need it
 class Authors {
@@ -148,7 +149,7 @@ class Authors {
       dateOfBirth: DateTime.utc(1893, 4, 16),
       dateOfDeath: DateTime.utc(1991, 3, 23),
       quantifications: ['Багряна'],
-      imageUrl: 'assets/images/elisaveta_bagrqna',
+      imageUrl: 'assets/images/elisaveta_bagrqna.jpg',
       periods: ['Авандгардизъм'],
       compositions: bagrqnaCompositionsList(),
     ),
@@ -158,7 +159,7 @@ class Authors {
         town: 'Жеравна',
         dateOfBirth: DateTime.utc(1880, 11, 9),
         dateOfDeath: DateTime.utc(1937, 10, 15),
-        imageUrl: 'assets/images/yordan_yovkov',
+        imageUrl: 'assets/images/yordan_yovkov.jpg',
         compositions: yovkovCompositionsList(),
         periods: ['Реализъм'],
         quantifications: ['Майстор на късия разказ', 'Обективен разказвач']),
@@ -167,11 +168,22 @@ class Authors {
         name: 'Никола Вапцаров',
         town: 'Банско',
         periods: ['Реализъм'],
-        imageUrl: 'assets/images/nikola_vapcarov',
+        imageUrl: 'assets/images/nikola_vapcarov.jpg',
         dateOfBirth: DateTime.utc(1909, 11, 24),
         dateOfDeath: DateTime.utc(1942, 7, 23),
         compositions: vapcarovCompositionsList(),
-        quantifications: ['Огняроинтелиген'])
+        quantifications: ['Огняроинтелиген']),
+    Author(
+      id: 14,
+      name: 'Димитър Димов',
+      periods: ['Социалистически реализъм'],
+      imageUrl: 'assets/images/dimitar_dimov.jpg',
+      dateOfBirth: DateTime.utc(1966, 6, 25),
+      dateOfDeath: DateTime.utc(1909, 4, 1),
+      town: 'Ловеч',
+      quantifications: ['Чудак - от съучениците му'],
+      compositions: dimovCompositionsList(),
+    )
   ];
 
   List<Author> get authors {

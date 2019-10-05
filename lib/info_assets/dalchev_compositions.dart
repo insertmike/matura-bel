@@ -1,5 +1,3 @@
-import '../models/author.dart';
-
 import '../models/composition.dart';
 
 List<Composition> dalchevCompositionsList() {
